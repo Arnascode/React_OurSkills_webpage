@@ -3,7 +3,7 @@ import LogNav from '../components/LogNav';
 function RegisterPage() {
   return (
     <div className='container'>
-      <LogNav />
+      {/* <LogNav /> */}
       <h1 className='display-4 py-4 text-center'>Register here</h1>
 
       <form className='jumbotron w-50 mx-auto'>

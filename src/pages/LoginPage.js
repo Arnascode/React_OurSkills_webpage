@@ -1,7 +1,6 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-import LogNav from '../components/LogNav';
 import { useAuthCtx } from '../store/authContext';
 import { baseUrl, myFetch } from '../utils';
 
@@ -38,12 +37,6 @@ function LoginPage() {
   function rightClassesForInput(field) {
     let resultClasses = 'form-control';
 
-    // if (formik.touched[field] && formik.errors[field]) {
-    //   resultClasses += ' is-invalid';
-    // }
-    // if (formik.touched[field] && !formik.errors[field]) {
-    //   resultClasses += ' is-valid';
-    // }
     if (formik.touched[field]) {
       resultClasses += formik.errors[field] ? ' is-invalid' : ' is-valid';
     }
@@ -52,7 +45,6 @@ function LoginPage() {
   }
   return (
     <div className='container'>
-      <LogNav />
       <h1 className='display-4 py-4 text-center'>LoginPage</h1>
 
       <form onSubmit={formik.handleSubmit} className='jumbotron small-container mx-auto'>

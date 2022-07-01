@@ -6,7 +6,7 @@ function HomePage() {
 
   return (
     <div className='container jumbotron'>
-      <MainNav />
+      {/* <MainNav /> */}
       <h1 className='display-3'>HomePage</h1>
       {!isUserLoggedIn && (
         <p className='lead'>

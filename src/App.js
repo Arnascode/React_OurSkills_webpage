@@ -5,21 +5,24 @@ import HomePage from './pages/HomePage';
 import AddPage from './pages/AddPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
+import ProtectedRoute from './components/ProtectedRoute';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <div className='App'>
+      <Header />
       <Switch>
-        <Route path='/register'>
+        <Route path={'/register'}>
           <RegisterPage />
         </Route>
-        <Route path='/login'>
+        <Route path={'/login'}>
           <LoginPage />
         </Route>
-        <Route path='/posts'>
+        <ProtectedRoute path={'/posts'}>
           <AddPage />
-        </Route>
-        <Route exact path='/'>
+        </ProtectedRoute>
+        <Route exact path={'/'}>
           <HomePage />
         </Route>
       </Switch>
