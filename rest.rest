@@ -1,0 +1,19 @@
+GET https://autumn-delicate-wilderness.glitch.me/v1/content/skills
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQ4LCJlbWFpbCI6Im1hcml1c0BtYXJpdXNzLmNvbSIsImlhdCI6MTY1NjY2NjAyMX0.BrwCE0144HZ1wySqEtmO_Lp04RuT5y5OMpVFood4N3o
+###
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/register
+Content-Type: application/json
+
+{
+    "email": "marius@mariuss.com",
+    "password": "123456"
+}
+###
+
+POST https://autumn-delicate-wilderness.glitch.me/v1/auth/login
+Content-Type: application/json
+
+{
+    "email": "marius@mariuss.com",
+    "password": "123456"
+}
