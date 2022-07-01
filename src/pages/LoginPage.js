@@ -22,7 +22,7 @@ function LoginPage() {
     onSubmit: async (values) => {
       console.log('values ===', values);
 
-      const fetchResult = await myFetch(`${baseUrl}/login`, 'POST', values);
+      const fetchResult = await myFetch(`${baseUrl}/v1/auth/login`, 'POST', values);
       // ar gavom token
       if (fetchResult.success) {
         // turim token
@@ -52,7 +52,7 @@ function LoginPage() {
   }
   return (
     <div className='container'>
-        <LogNav />
+      <LogNav />
       <h1 className='display-4 py-4 text-center'>LoginPage</h1>
 
       <form onSubmit={formik.handleSubmit} className='jumbotron small-container mx-auto'>

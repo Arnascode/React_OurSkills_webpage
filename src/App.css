@@ -1,13 +1,17 @@
 body {
   margin-top: 0;
+  background-color: rgb(161, 155, 155);
 }
 img {
   margin-top: 20px;
   max-width: 100%;
+  width: 150px;
 }
 
 nav {
-  justify-content: space-around;
+  text-align: center;
+  background-color: rgb(161, 155, 155);
+  text-indent: 5px;
 }
 .nav-link {
   padding: 10px 20px;

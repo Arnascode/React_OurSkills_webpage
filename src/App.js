@@ -16,7 +16,7 @@ function App() {
         <Route path='/login'>
           <LoginPage />
         </Route>
-        <Route path='/add'>
+        <Route path='/posts'>
           <AddPage />
         </Route>
         <Route exact path='/'>
