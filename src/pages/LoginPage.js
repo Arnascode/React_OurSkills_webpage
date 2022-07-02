@@ -22,18 +22,15 @@ function LoginPage() {
       console.log('values ===', values);
 
       const fetchResult = await myFetch(`${baseUrl}/v1/auth/login`, 'POST', values);
-      // ar gavom token
-      if (fetchResult.success) {
-        // turim token
 
+      if (fetchResult.success) {
         ctx.login(fetchResult.token, values.email);
-        // redirect to /posts
-        history.replace('/posts');
+
+        history.replace('/');
       }
       console.log('fetchResulg ===', fetchResult);
     },
   });
-  // console.log('formik.errors ===', formik.errors);
   function rightClassesForInput(field) {
     let resultClasses = 'form-control';
 
@@ -45,9 +42,9 @@ function LoginPage() {
   }
   return (
     <div className='container'>
-      <h1 className='display-4 py-4 text-center'>LoginPage</h1>
+      <h1 className='text-center'>LoginPage</h1>
 
-      <form onSubmit={formik.handleSubmit} className='jumbotron small-container mx-auto'>
+      <form onSubmit={formik.handleSubmit} className='jumbotron'>
         <div className='form-group'>
           <label htmlFor='email'>Email</label>
           <input
@@ -55,7 +52,6 @@ function LoginPage() {
             onBlur={formik.handleBlur}
             value={formik.values.email}
             type='email'
-            // TODO: jei input yra touced ir nera klaidu tai prideam klase "is-valid"
             className={rightClassesForInput('email')}
             id='email'
             name='email'
@@ -75,7 +71,7 @@ function LoginPage() {
           />
           <div className='invalid-feedback'>{formik.errors.password}</div>
         </div>
-        <button type='submit' className='btn btn-outline-dark'>
+        <button type='submit' className='btn'>
           Login
         </button>
       </form>

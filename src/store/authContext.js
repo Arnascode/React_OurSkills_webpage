@@ -39,8 +39,6 @@ const AuthProvider = ({ children }) => {
 
 export default AuthProvider;
 
-// custom authCtx hook
-
 export const useAuthCtx = () => {
   return useContext(AuthContext);
 };

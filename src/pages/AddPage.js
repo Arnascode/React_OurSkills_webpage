@@ -27,7 +27,8 @@ import { Link, Route, useHistory } from 'react-router-dom';
 function AddPage() {
   const history = useHistory();
   const { token } = useAuthCtx();
-  if (!token) history.push('/login');
+
+  // if (!token) history.push('/login');
   // console.log('token ===', token);
   const [posts, setPosts] = useState([]);
 

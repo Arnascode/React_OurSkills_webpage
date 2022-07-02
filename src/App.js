@@ -19,12 +19,15 @@ function App() {
         <Route path={'/login'}>
           <LoginPage />
         </Route>
-        <ProtectedRoute path={'/posts'}>
+        {/* <ProtectedRoute path={'/add'}>
           <AddPage />
-        </ProtectedRoute>
-        <Route exact path={'/'}>
-          <HomePage />
+        </ProtectedRoute> */}
+        <Route path={'/add'}>
+          <AddPage />
         </Route>
+        <ProtectedRoute exact path={'/'}>
+          <HomePage />
+        </ProtectedRoute>
       </Switch>
     </div>
   );

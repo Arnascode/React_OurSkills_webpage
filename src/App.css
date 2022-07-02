@@ -3,7 +3,7 @@ body {
   background-color: rgb(161, 155, 155);
 }
 
-.product-grid {
+/* .product-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
@@ -19,4 +19,44 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: top;
+} */
+
+.invalid-feedback {
+  background-color: rgb(173, 125, 125);
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.container {
+  text-align: center;
+  display: block;
+  background-color: white;
+  height: auto;
+  width: auto;
+  max-width: 500px;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.jumbotron {
+  text-align: center;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 200px;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 5px;
+}
+.text-center {
+  padding-top: 10px;
 }

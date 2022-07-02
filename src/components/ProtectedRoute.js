@@ -12,10 +12,10 @@ function ProtectedRoute(props) {
       {isUserLoggedIn ? (
         children
       ) : (
-        <div className='container'>
-          <h2>Please login</h2>
+        <div className='container jumbotron'>
+          <h1 className='text-center'>Please login</h1>
           <div className='alert alert-danger'>You are not logged in!!!</div>
-          <Link to={'/login'}>Login here 🌏</Link>
+          <Link to={'/login'}>Login here </Link>
         </div>
       )}
     </Route>
