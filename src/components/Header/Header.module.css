@@ -10,6 +10,7 @@
 .nav-link {
   padding: 0.5em 1em;
   font-size: 20px;
+  margin: 4px 4px;
   color: rgb(248, 253, 246);
   text-decoration: none;
 }
@@ -25,4 +26,8 @@
   height: 80px;
   background-repeat: no-repeat;
   background-size: cover;
+  border-radius: 10px;
+}
+
+.email {
 }

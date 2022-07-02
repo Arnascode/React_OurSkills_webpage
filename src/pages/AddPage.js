@@ -1,30 +1,10 @@
-// import { useAuthCtx } from '../store/authContext';
-// import css from './css/Add.module.css';
-// function AddPage() {
-//   const { isUserLoggedIn } = useAuthCtx();
-
-//   return (
-//     <div className={css.center}>
-//       <h1 className='text-center'>Add Page</h1>
-//       {!isUserLoggedIn && (
-//         <p className='lead'>Jei norit pridėti, būtinai prisijunkite.</p>
-//       )}
-//       <div className={css.container}>
-//         <form action=''></form>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default AddPage;
-
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import { useAuthCtx } from '../store/authContext';
 import { baseUrl, myFetch } from '../utils';
-
+import css from './css/Add.module.css';
 const initValues = {
   title: '',
   description: '',
@@ -33,6 +13,7 @@ const initValues = {
 function AddPage() {
   const history = useHistory();
   const ctx = useAuthCtx();
+  const { token } = useAuthCtx();
   const formik = useFormik({
     initialValues: initValues,
     validationSchema: Yup.object({
@@ -45,12 +26,8 @@ function AddPage() {
       // delete valuesCopy['repeatPassword'];
       console.log('values ===', values);
       console.log('valuesCopy ===', valuesCopy);
-      const registerResult = await myFetch(
-        `${baseUrl}/v1/content/skills`,
-        'POST',
-        valuesCopy
-      );
-      if (registerResult.succes === '1') {
+      const registerResult = await myFetch(`${baseUrl}/v1/content/skills`, 'POST', token);
+      if (registerResult.msg === 'Added new skill to account') {
         ctx.login(registerResult.token, valuesCopy.title);
         history.replace('/');
       }
@@ -77,10 +54,10 @@ function AddPage() {
     return resultClasses;
   }
   return (
-    <div className='container'>
-      <h1 className='text-center'>Add here</h1>
+    <div className={css.card}>
+      <h1 className={css.center}>Add here</h1>
 
-      <form onSubmit={formik.handleSubmit} className='jumbotron'>
+      <form onSubmit={formik.handleSubmit} className={css.container}>
         <div className='form-group'>
           <label htmlFor='title'>Title</label>
           <input

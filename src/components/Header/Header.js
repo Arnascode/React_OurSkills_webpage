@@ -1,4 +1,4 @@
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useAuthCtx } from '../../store/authContext';
 import css from './Header.module.css';
 
@@ -12,8 +12,11 @@ function Header(props) {
           <div>
             <div>
               <NavLink className='nav-link' exact to={'/'}>
-                <img className={css.img} src='./img/img_flwr.gif' alt='' srcset='' />
+                <img className={css.img} src='./img/Flickr.webp' alt='' srcset='' />
               </NavLink>
+              {/* <div>
+                {isUserLoggedIn && <h2 className={css['email']}> Hello {userEmail}</h2>}
+              </div> */}
               {isUserLoggedIn && (
                 <>
                   <NavLink className={css['nav-link']} exact to={'/'}>
