@@ -5,8 +5,8 @@ import { useAuthCtx } from '../store/authContext';
 import { baseUrl, myFetch } from '../utils';
 
 const initValues = {
-  email: '',
-  password: '',
+  email: 'marius@mariuss.com',
+  password: '123456',
 };
 
 function LoginPage() {
@@ -23,7 +23,7 @@ function LoginPage() {
 
       const fetchResult = await myFetch(`${baseUrl}/v1/auth/login`, 'POST', values);
 
-      if (fetchResult.success) {
+      if (fetchResult.msg === 'Successfully logged in') {
         ctx.login(fetchResult.token, values.email);
 
         history.replace('/');

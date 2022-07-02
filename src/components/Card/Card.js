@@ -1,20 +1,12 @@
-function Card(props) {
-  const normalDate = () => {
-    const gotDateObj = new Date(props.date);
-    const niceDate = gotDateObj.toLocaleString('lt-LT', { dateStyle: 'long' });
-    return niceDate;
-  };
+import css from './Card.module.css';
 
+function Card(props) {
   return (
-    <div className='card w-25'>
-      <div className='card-body'>
-        <h3>{props.id}</h3>
-        <h5 className='card-title'>{props.title}</h5>
-        <h6 className='card-subtitle mb-2 text-muted'>{normalDate()}</h6>
-        <p className='card-text'>{props.description}</p>
-        <a href='/' className='btn btn-primary'>
-          See more
-        </a>
+    <div className={css.card}>
+      <div className={css.body}>
+        <h2>{props.id}</h2>
+        <h3 className={css.title}>{props.title}</h3>
+        <p className={css.text}>{props.description}</p>
       </div>
     </div>
   );

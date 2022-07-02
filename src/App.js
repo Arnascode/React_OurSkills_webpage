@@ -19,12 +19,10 @@ function App() {
         <Route path={'/login'}>
           <LoginPage />
         </Route>
-        {/* <ProtectedRoute path={'/add'}>
+
+        <ProtectedRoute path={'/add'}>
           <AddPage />
-        </ProtectedRoute> */}
-        <Route path={'/add'}>
-          <AddPage />
-        </Route>
+        </ProtectedRoute>
         <ProtectedRoute exact path={'/'}>
           <HomePage />
         </ProtectedRoute>

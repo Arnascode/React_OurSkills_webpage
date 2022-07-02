@@ -19,8 +19,8 @@ function Header(props) {
                   <NavLink className={css['nav-link']} exact to={'/'}>
                     Home
                   </NavLink>
-                  <NavLink className={css['nav-link']} to={'/posts'}>
-                    Posts
+                  <NavLink className={css['nav-link']} to={'/add'}>
+                    Add
                   </NavLink>
                   <NavLink onClick={logout} className={css['nav-link']} to={'/login'}>
                     Logout

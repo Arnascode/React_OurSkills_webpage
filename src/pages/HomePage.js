@@ -2,7 +2,8 @@ import Card from '../components/Card/Card';
 import { useState, useEffect } from 'react';
 import { baseUrl, myFetchAuth } from '../utils';
 import { useAuthCtx } from '../store/authContext';
-import { Link, Route, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import css from './css/Home.module.css';
 
 function HomePage() {
   const history = useHistory();
@@ -24,11 +25,10 @@ function HomePage() {
   }, []);
 
   return (
-    <div className='container jumbotron'>
+    <div className={css.center}>
       <h1 className='text-center'>Our Posts</h1>
-      <Link to='/login'>You need to Log In</Link>
 
-      <div className='d-flex flex-wrap gap-1'>
+      <div className={css.container}>
         {posts.map((pObj) => (
           <Card key={pObj.id} {...pObj} />
         ))}

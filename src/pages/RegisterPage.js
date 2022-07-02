@@ -34,11 +34,13 @@ function RegisterPage() {
         'POST',
         valuesCopy
       );
-      if (registerResult.succcess) {
-        ctx.register(registerResult.token, valuesCopy.email);
+      if (registerResult.changes === 1) {
+        ctx.login(registerResult.token, valuesCopy.email);
         history.replace('/login');
       }
       console.log('registerResult ===', registerResult);
+
+      console.log('submiting values ===', values);
     },
   });
 
