@@ -1,5 +1,4 @@
 import './App.css';
-
 import { Route, Switch } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import AddPage from './pages/AddPage';
@@ -7,6 +6,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <HomePage />
         </ProtectedRoute>
       </Switch>
+      <Footer />
     </div>
   );
 }

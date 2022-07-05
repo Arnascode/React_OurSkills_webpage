@@ -1,9 +1,8 @@
 import { useFormik } from 'formik';
 import { useHistory } from 'react-router-dom';
 import * as Yup from 'yup';
-
 import { useAuthCtx } from '../store/authContext';
-import { baseUrl, myFetch } from '../utils';
+import { baseUrl, myFetchAdd } from '../utils';
 import css from './css/Add.module.css';
 const initValues = {
   title: '',
@@ -12,7 +11,6 @@ const initValues = {
 
 function AddPage() {
   const history = useHistory();
-  const ctx = useAuthCtx();
   const { token } = useAuthCtx();
   const formik = useFormik({
     initialValues: initValues,
@@ -23,39 +21,30 @@ function AddPage() {
 
     onSubmit: async (values) => {
       const valuesCopy = { ...values };
-      // delete valuesCopy['repeatPassword'];
       console.log('values ===', values);
       console.log('valuesCopy ===', valuesCopy);
-      const registerResult = await myFetch(`${baseUrl}/v1/content/skills`, 'POST', token);
-      if (registerResult.msg === 'Added new skill to account') {
-        ctx.login(registerResult.token, valuesCopy.title);
+      const addResult = await myFetchAdd(
+        `${baseUrl}/v1/content/skills`,
+        'POST',
+        token,
+        values
+      );
+      if (addResult.msg === 'Added new skill to account') {
         history.replace('/');
       }
-      console.log('registerResult ===', registerResult);
-
-      console.log('submiting values ===', values);
     },
   });
 
-  // function matchPass() {
-  //   const { password, repeatPassword } = initValues;
-  //   if (password !== repeatPassword) {
-  //     console.log('Passwords does not match');
-  //   }
-  // }
-
   function rightClassesForInput(field) {
     let resultClasses = 'form-control';
-
     if (formik.touched[field]) {
       resultClasses += formik.errors[field] ? ' is-invalid' : ' is-valid';
     }
-
     return resultClasses;
   }
   return (
     <div className={css.card}>
-      <h1 className={css.center}>Add here</h1>
+      <h1 className={css.center}>Add Your Skill</h1>
 
       <form onSubmit={formik.handleSubmit} className={css.container}>
         <div className='form-group'>

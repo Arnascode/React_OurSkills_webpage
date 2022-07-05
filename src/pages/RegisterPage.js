@@ -27,8 +27,6 @@ function RegisterPage() {
     onSubmit: async (values) => {
       const valuesCopy = { ...values };
       delete valuesCopy['repeatPassword'];
-      console.log('values ===', values);
-      console.log('valuesCopy ===', valuesCopy);
       const registerResult = await myFetch(
         `${baseUrl}/v1/auth/register`,
         'POST',
@@ -38,9 +36,6 @@ function RegisterPage() {
         ctx.login(registerResult.token, valuesCopy.email);
         history.replace('/login');
       }
-      console.log('registerResult ===', registerResult);
-
-      console.log('submiting values ===', values);
     },
   });
 
@@ -53,17 +48,14 @@ function RegisterPage() {
 
   function rightClassesForInput(field) {
     let resultClasses = 'form-control';
-
     if (formik.touched[field]) {
       resultClasses += formik.errors[field] ? ' is-invalid' : ' is-valid';
     }
-
     return resultClasses;
   }
   return (
     <div className='container'>
       <h1 className='text-center'>Register here</h1>
-
       <form onSubmit={formik.handleSubmit} onBlur={matchPass} className='jumbotron'>
         <div className='form-group'>
           <label htmlFor='email'>Email</label>

@@ -9,7 +9,6 @@ function HomePage() {
   const history = useHistory();
   const { token } = useAuthCtx();
   if (!token) history.push('/login');
-  // console.log('token ===', token);
   const [posts, setPosts] = useState([]);
 
   const getPosts = async () => {
@@ -26,9 +25,10 @@ function HomePage() {
 
   return (
     <div className={css.center}>
-      <h1 className='text-center'>Our Posts</h1>
+      <h1 className='text-center'>Our Skills</h1>
 
       <div className={css.container}>
+        {posts.length === 0 && <h2>Loading...</h2>}
         {posts.map((pObj) => (
           <Card key={pObj.id} {...pObj} />
         ))}

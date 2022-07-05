@@ -21,10 +21,9 @@ Content-Type: application/json
 
 POST https://autumn-delicate-wilderness.glitch.me/v1/content/skills
 Content-Type: application/json
-mode : 'no-cors'
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MzQ4LCJlbWFpbCI6Im1hcml1c0BtYXJpdXNzLmNvbSIsImlhdCI6MTY1Njc1MDQ4N30.kspGI-MoqA1HaRnqiWSJSaypzHWq54_98YIKXqhPUeU
 
 {
-    "title": "marius@mariuss.com",
-    "description": "123456"
+    "title": "m2e2e22e",
+    "description": "1e22e2e56"
 }
