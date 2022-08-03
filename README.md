@@ -4,7 +4,7 @@ Our skills
 
 # Short Description
 
-This is an application that allows you to add your own skills to check them and to achieve more and more goals. To have all access you have to be a registered user 🔐.
+This is an application that allows you to add your own skills to check them. To have all access you have to be a registered user 🔐.
 
 The project has been made using React Js for FE with working backend 💡
 
